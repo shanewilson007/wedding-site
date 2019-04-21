@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html lang='en'>
+
+<head>
+    <title>Welcome/ Home</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load staticfiles %}
+    <!-- CSS -->
+    <link rel="stylesheet" href='{% static "home/css/bootstrap.min.css" %}'>
+
+    <link rel='stylesheet' href='{% static "home/css/personal.css" %}'>
+    <!-- JS -->
+    <script src={% static "home/js/jquery.js" %}></script>
+    <script src='{% static "home/js/bootstrap.min.js" %}'></script>
+    <script src={% static "home/js/personal.js" %}></script>
+    <!--<script type="text/javascript" src="http://livejs.com/live.js"></script>-->
+</head>
+
+<body>
+
+    {% block welcome %}{% endblock %}
+    {% block content %}{% endblock %}
+    {% block logout %}{% endblock %}
+
+</body>
+</html>

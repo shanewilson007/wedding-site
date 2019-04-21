@@ -1,0 +1,41 @@
+{% block rsvp %}
+<div class='rsvp'>
+    <a name="rsvp"></a>
+    <h1>RSVP</h1>
+    <h3>If you have recieved an invitation to any of the following, you
+        may respond through the subsequent links.</h3>
+    <div>
+        <h3>Reception</h3>
+        <p>Saturday, March 16th, 2019 at 6pm</p>
+        <button id="rsvp1" type="button">RSVP</button>
+    </div>
+</div>
+
+<span id="popup1">
+    <button id="close">X</button>
+    {% if user.is_authenticated %}
+    <p>Will you be attending the Saturday evening Reception Party?</p><br>
+
+    <form action="/home/rsvp/" method="post">
+        {% csrf_token %}
+        {{ receptionform }}
+        <p>How many others in your party?</p>
+        {% csrf_token %}
+        {{ extrasform }} 
+        <button type="submit" class="rsvpSubmitBtn">Submit</button>
+        <br>
+        <br>
+        <h3>Your RSVP:</h3>
+        {% for rsvp in rsvps %}
+        <p>Attending: {{ rsvp.get_reception_display }}</p>
+        <p>Extra Guests: {{ rsvp.get_extra_display }}</p>
+        {% endfor %}
+
+    </form>
+
+    {% else %}
+        <h3>You must be logged in to RSVP</h3>
+    {% endif %}
+</span>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block welcome %}
+
+<header style="margin-bottom:5%">
+    {% include "home/header.html" %}
+</header>
+
+<h3>
+    If you wish to use site features such as RSVP and comments, please login.
+</h3>
+<header style="margin-bottom:3%;width:80%;margin-left:10%">
+    <form id="loginForm" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="formBtn" type="submit">Login</button>
+</header>
+<h3 style="text-align:center">
+    If you just want to browse the site for information, and do not plan<br>
+    to use the online RSVP or comment section, please click<br>
+    <a href="{% url 'home' %}">here</a></h3>
+</h3>
+
+{% endblock %}

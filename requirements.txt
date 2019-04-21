@@ -1,0 +1,9 @@
+Django==2.1.5
+django-extensions==2.1.4
+django-grappelli==2.12.2
+Jinja2==2.10
+MarkupSafe==1.1.0
+pytz==2018.9
+six==1.12.0
+sqlparse==0.2.4
+Werkzeug==0.14.1

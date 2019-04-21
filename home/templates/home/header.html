@@ -1,0 +1,18 @@
+<header>
+    <div>
+        {% if user.is_authenticated %}
+            <a name="top"></a>
+            <a href="#rsvp">RSVP</a>
+            <a href="#party">Wedding Party</a>
+            <a href="#travel">Travel Info</a>
+            <a href="#registry">Registry</a>
+            <a href="#comments">Comments</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a style="margin-left:90%" href="{% url 'login' %}">Login</a>
+        {% endif %}
+        <h1>Welcome {{ request.user.first_name }}!</h1>
+        <h1>Leonor Egoavil + Shane Wilson</h1>
+        <h3>Saturday March 16th 2019</h3>
+    </div>
+</header>

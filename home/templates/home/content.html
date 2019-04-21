@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "home/header.html" %}
+{% include "home/carousel.html" %}
+
+<div class='content'>
+
+<h1>We did it!</h1>
+<h3 id="welcome">
+    We've made this website to help get some of the information out pertaining to our
+    special day.<br><br>
+    Below you'll be able to RSVP to any events you might be involved with,
+    find out what places we're registered with and enhance your knowledge of the parties
+    involved!<br><br>
+    If you're coming from out of town, we've also included a section with some information
+    on some of the popular hotels in our area, as well as dining and things to see.<br>
+    We hope you enjoy!
+</h3>
+
+{% include "home/rsvp.html" %}
+{% include "home/party.html" %}
+{% include "home/travel.html" %}
+{% include "home/registry.html" %}
+{% include "home/comments.html" %}
+
+</div>
+
+{% include "home/footer.html" %}
+{% endblock %}

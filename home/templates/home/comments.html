@@ -1,0 +1,33 @@
+{% block comments %}
+
+<a name="comments"></a>
+<div class="commentSection">
+    <h1>We would love to hear from you!</h1>
+    <h6 style="color:white">
+    Just a reminder, this site is open to everyone.<br>
+    Please do not leave any personal information in the comment section.<br>
+    Thank you!</h6>
+
+<div id=formPost>
+    {% if user.is_authenticated %}
+    <form action="/home/comments/" method="post">
+        {% csrf_token %}
+        {{ postform.as_p }}
+        <button type="submit" class="formBtn">Submit</button>
+    {% else %}
+        <h5 style="color:white;margin-top:2%;padding:1%;border-style:solid">
+            You must be logged in to leave a comment.</h5>
+    {% endif %}
+        </form>
+</div>
+
+    {% for post in posts %}
+    <h3 style="color:white;width:80%;margin-left:10%">{{ post.post|linebreaks }}</h3>
+    <h6 style="color:grey">{{ post.user.get_full_name }} - {{ post.date }}</h6>
+    <br>
+    <hr style="width:30%">
+    <br>
+    {% endfor %}
+</div>
+
+{% endblock %}
